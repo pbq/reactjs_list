@@ -1,0 +1,19 @@
+{
+  "name": "reactjs_list",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000r\u0000e\u0000a\u0000c\u0000t\u0000j\u0000s\u0000_\u0000l\u0000i\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbq/reactjs_list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pbq/reactjs_list/issues"
+  },
+  "homepage": "https://github.com/pbq/reactjs_list#readme"
+}
