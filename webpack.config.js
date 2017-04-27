@@ -1,20 +1,24 @@
-module.exports = {
-    entry: ['babel-polyfill', './app/index.js'],
-    output: {
-        path: __dirname + '/build',
-        // if the above line does not work, try `path: __dirname + '/build'`
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/, // a regular expression that catches .js files
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }]
-    },
-    devServer: {
-        port: 3000, // most common port
-        contentBase: './build',
-        inline: true
-    }
-}
+var webpack = require('webpack');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+var APP_DIR = path.resolve(__dirname, 'src/client/app');
+
+var config = {
+  entry: APP_DIR + '/index.jsx',
+  output: {
+    path: BUILD_DIR,
+    filename: 'bundle.js'
+  },
+  module : {
+    loaders : [
+      {
+        test : /\.jsx?/,// a regular expression that catches .jsx files
+        include : APP_DIR,
+        loader: 'babel-loader'
+      }
+    ]
+  }
+};
+
+module.exports = config;
