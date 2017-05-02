@@ -20,9 +20,14 @@ var config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.jsx$/,// a regular expression that catches .jsx files
+                test: /\.jsx$/, // a regular expression that catches .jsx files
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+              test: /\.css$/, // a regular expression that catches .css files
+              exclude: /node_modules/,
+              loader: "style-loader!css-loader?modules,localIdentName=[hash:base64:6]-[name]-[local]"
             }
         ]
     },
