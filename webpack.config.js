@@ -25,9 +25,23 @@ var config = {
                 loader: "babel-loader"
             },
             {
-              test: /\.css$/, // a regular expression that catches .css files
-              exclude: /node_modules/,
-              loader: "style-loader!css-loader?modules,localIdentName=[hash:base64:6]-[name]-[local]"
+              test: /\.css$/, // a regular expression that catches .css 
+              use: [{
+                loader: "style-loader"
+              },{
+                loader: "css-loader",
+                options: {
+                  // Enable/Disable CSS Modules
+                  modules: true,
+
+                   // an option in order to be more readable
+                   // name=App local=heading -  6 first caracters of hash
+                  localIdentName: '[name]-[local]-[hash:base64:6]',
+
+                  // Export Classnames in CamelCase => transform css class xxx-xxx in xxxXxx
+                  camelCase: true
+                }
+              }]
             }
         ]
     },
