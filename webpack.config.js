@@ -17,17 +17,18 @@ var config = {
     entry: APP_DIR + '/index.jsx',
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [{
                 enforce: 'pre',
-                test: /\.jsx$/,
+                test: /\.(js|jsx)$/,
                 loader: 'standard-loader',
                 exclude: /node_modules/
             },
             {
-                test: /\.jsx$/, // a regular expression that catches .jsx files
+                test: /\.(js|jsx)$/, // a regular expression that catches .jsx files
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },
@@ -39,6 +40,9 @@ var config = {
                 })
             }
         ]
+    },
+    devServer: {
+      historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
